@@ -61,7 +61,7 @@ Input 3 x 256 x 256
 
 - Pixel accuracy is misleading for this task: predicting "background" everywhere scores about 47% accuracy on a training batch but only 0.16 mIoU.
 - The boundary class limits the mean. It scores about 0.55 IoU against 0.83 and 0.91 for the other two. The band is narrow and hand-drawn at varying widths, so small localisation errors cost a lot of overlap.
-- Doubling the resolution from 128 to 256 px gave a modest gain (0.744 to 0.755), smaller than expected.
+- Doubling the resolution from 128 to 256 px made little difference: the two validation curves track each other closely, and most of run 2's gain came from training five epochs longer.
 - The dataset labels collars and tags as "unclassified" (the boundary class). The model tends to label them as pet, as the first prediction sample shows.
 
 ## Possible next steps
